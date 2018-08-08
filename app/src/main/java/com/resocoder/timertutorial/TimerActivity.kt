@@ -13,7 +13,6 @@ import android.view.MenuItem
 import com.resocoder.timertutorial.util.NotificationUtil
 import com.resocoder.timertutorial.util.PrefUtil
 import kotlinx.android.synthetic.main.activity_timer.*
-import kotlinx.android.synthetic.main.content_timer.*
 import java.util.*
 
 class TimerActivity : AppCompatActivity() {
@@ -59,19 +58,19 @@ class TimerActivity : AppCompatActivity() {
         supportActionBar?.setIcon(R.drawable.ic_timer)
         supportActionBar?.title = "      Football timer"
 
-        fab_start.setOnClickListener { v ->
+        fab_start.setOnClickListener { _ ->
             startTimer()
             timerState = TimerState.Running
             updateButtons()
         }
 
-        fab_pause.setOnClickListener { v ->
+        fab_pause.setOnClickListener { _ ->
             timer.cancel()
             timerState = TimerState.Paused
             updateButtons()
         }
 
-        fab_stop.setOnClickListener { v ->
+        fab_stop.setOnClickListener { _ ->
             timer.cancel()
             onTimerFinished()
         }

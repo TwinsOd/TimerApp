@@ -27,10 +27,10 @@
         android:layout_width="@dimen/progress_bar_size"
         android:layout_height="@dimen/progress_bar_size"
         android:layout_margin="@dimen/margin_progress"
-        app:layout_constraintBottom_toTopOf="@+id/fab_pause"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fab_pause"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/textView_countdown"
@@ -49,10 +49,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="@dimen/fab_bigger_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/fab_pause"
+        android:layout_marginEnd="@dimen/fab_bigger_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintBottom_toTopOf="@id/fab_pause"
         app:srcCompat="@drawable/ic_stop" />
 
     <android.support.design.widget.FloatingActionButton
@@ -60,10 +60,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_marginBottom="@dimen/fab_bigger_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fab_stop"
-        app:layout_constraintEnd_toStartOf="@id/fab_start"
+        android:layout_marginEnd="@dimen/fab_bigger_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab_stop"
+        app:layout_constraintBottom_toTopOf="@id/fab_start"
         app:srcCompat="@drawable/ic_pause" />
 
     <android.support.design.widget.FloatingActionButton
@@ -71,10 +71,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
-        android:layout_marginBottom="@dimen/fab_bigger_margin"
+        android:layout_marginEnd="@dimen/fab_bigger_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fab_pause"
+        app:layout_constraintTop_toBottomOf="@+id/fab_pause"
         app:srcCompat="@drawable/ic_play_arrow" />
 
 </android.support.constraint.ConstraintLayout>
