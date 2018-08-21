@@ -10,6 +10,7 @@ import android.os.CountDownTimer
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import com.resocoder.timertutorial.util.NotificationUtil
 import com.resocoder.timertutorial.util.PrefUtil
 import kotlinx.android.synthetic.main.activity_timer.*
@@ -54,6 +55,7 @@ class TimerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setSupportActionBar(toolbar)
         supportActionBar?.setIcon(R.drawable.ic_timer)
         supportActionBar?.title = "      Football timer"
