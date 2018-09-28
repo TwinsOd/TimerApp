@@ -6,9 +6,9 @@
         android:key="com.resocoder.timer.timer_length"
         android:title="Timer Length"
         android:summary="For how many minutes should the timer run?"
-        android:defaultValue="10"
+        android:defaultValue="7"
         app:msbp_minValue="1"
-        app:msbp_maxValue="60"
+        app:msbp_maxValue="45"
         app:msbp_interval="1"
         app:msbp_measurementUnit="minutes"
         app:msbp_dialogEnabled="true"/>

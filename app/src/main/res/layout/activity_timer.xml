@@ -21,6 +21,21 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <Button
+        android:id="@+id/choose_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="music"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"/>
+
+    <Button
+        android:id="@+id/play_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"/>
+
     <me.zhanghai.android.materialprogressbar.MaterialProgressBar
         android:id="@+id/progress_countdown"
         style="@style/Widget.MaterialProgressBar.ProgressBar"

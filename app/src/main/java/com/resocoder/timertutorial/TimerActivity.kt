@@ -1,5 +1,6 @@
 package com.resocoder.timertutorial
 
+import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -52,6 +53,8 @@ class TimerActivity : AppCompatActivity() {
 
     private var secondsRemaining: Long = 0
 
+    var playerCustom: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
@@ -77,6 +80,24 @@ class TimerActivity : AppCompatActivity() {
             onTimerFinished()
         }
         player = MediaPlayer.create(this, R.raw.sound1)
+
+        choose_audio.setOnClickListener { _ ->
+            val intentUpload = Intent()
+            intentUpload.type = "audio/*"
+            intentUpload.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(intentUpload, 1)
+        }
+
+        play_audio.setOnClickListener { _ ->
+            playerCustom?.start()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            playerCustom = MediaPlayer.create(this, data?.data)
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onResume() {
