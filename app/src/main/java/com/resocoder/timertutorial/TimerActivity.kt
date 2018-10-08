@@ -63,32 +63,32 @@ class TimerActivity : AppCompatActivity() {
         supportActionBar?.setIcon(R.drawable.ic_timer)
         supportActionBar?.title = "      Football timer"
 
-        fab_start.setOnClickListener { _ ->
+        fab_start.setOnClickListener {
             startTimer()
             timerState = TimerState.Running
             updateButtons()
         }
 
-        fab_pause.setOnClickListener { _ ->
+        fab_pause.setOnClickListener {
             timer.cancel()
             timerState = TimerState.Paused
             updateButtons()
         }
 
-        fab_stop.setOnClickListener { _ ->
+        fab_stop.setOnClickListener {
             timer.cancel()
             onTimerFinished()
         }
         player = MediaPlayer.create(this, R.raw.sound1)
 
-        choose_audio.setOnClickListener { _ ->
+        choose_audio.setOnClickListener {
             val intentUpload = Intent()
             intentUpload.type = "audio/*"
             intentUpload.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(intentUpload, 1)
         }
 
-        play_audio.setOnClickListener { _ ->
+        play_audio.setOnClickListener {
             playerCustom?.start()
         }
     }
@@ -191,7 +191,7 @@ class TimerActivity : AppCompatActivity() {
         var i = count
         Thread(Runnable {
             if (i >= 1)
-                player?.setOnCompletionListener { _ ->
+                player?.setOnCompletionListener {
                     if (i > 1) {
                         player?.start()
                         i--
